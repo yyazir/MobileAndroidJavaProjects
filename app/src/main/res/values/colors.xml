@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">@android:color/holo_red_light</color>
+    <color name="purple_500">@color/purple_200</color>
+    <color name="purple_700">@color/purple_200</color>
+    <color name="teal_200">@color/purple_500</color>
+    <color name="teal_700">@color/purple_700</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="_bg__android_large___1_ek2_color">#FFFFFF</color>
+    <color name="rectangle_2_color">#DA4336</color>
+</resources>

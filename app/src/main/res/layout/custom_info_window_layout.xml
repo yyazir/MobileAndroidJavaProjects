@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="10dp"
+        app:cardBackgroundColor="#F1F1F1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:id="@+id/popupPharmacyname"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Eczane Adı: "
+                android:textStyle="bold"
+                android:textColor="#00101C"
+                />
+
+            <TextView
+                android:id="@+id/popupName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C"
+                />
+
+            <TextView
+                android:id="@+id/popupPharmacyadress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adres: "
+                android:textStyle="bold"
+                android:textColor="#00101C"
+                />
+
+            <TextView
+                android:id="@+id/popupAdress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C"
+                />
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                >
+
+                <!--<androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/callBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_add_ic_call_24"
+                    android:paddingRight="10dp"
+                    android:background="#00FA7268"
+                    android:elevation="30dp"
+                    />-->
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/popupRouteBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/route"
+                    android:paddingRight="10dp"
+                    android:background="#00F1F1F1"
+                    android:elevation="30dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/popupShareBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/share"
+                    android:paddingRight="10dp"
+                    android:background="#00F1F1F1"
+                    android:elevation="30dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
+
+
+

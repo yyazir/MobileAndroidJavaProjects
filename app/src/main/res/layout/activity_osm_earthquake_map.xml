@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    tools:context=".OsmEarthquakeMap">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapEarthquakeMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/focalMechanismButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false"
+        android:src="@drawable/beach_ball"
+        fab:fab_size="mini"
+        app:fab_colorNormal="@color/rectangle_2_color"
+        app:fab_colorPressed="@color/rectangle_2_color" />
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Rehber</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps2">MapsActivity2</string>
+    <string name="title_activity_pharmacy_map">PharmacyMap</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="desc1">Nöbetçi Eczaneler</string>
+    <string name="desc">Depremleri anlık olarak görüntüleyebilir ve detay bilgilerine erişebilirsiniz.</string>
+    <string name="desc2">Lokasyon bazlı eczaneleri listeleyebilir. Dilediğiniz eczaneye rota oluşturabilir ve arayabilirsiniz. Size yakın eczaneleri görüntülemek isterseniz harita butonuna tıklamanız yeterlidir.</string>
+    <string name="desc3">Deprem Haritası</string>
+    <string name="welcome">Hoşgeldiniz</string>
+    <string name="cardheader2">İstek/ Şikayet/ Öneri</string>
+    <string name="carddesc2">Çevrenizde gördüğünüz eksik sorunları veya yaşadığınız olumsuzlukları ilgili menüden iletebilirsiniz.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_near_me_maps">NearMeMapsActivity</string>
+</resources>

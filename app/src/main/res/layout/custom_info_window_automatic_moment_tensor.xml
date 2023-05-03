@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="10dp"
+        app:cardBackgroundColor="#F1F1F1"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageEarthquake"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:id="@+id/location1"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Lokasyon: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/locationText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/magnitude1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Büyüklük: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/magnitudeText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/deep1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Derinlik: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/deepText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/mo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mo: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/moText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/date1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarih: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dateText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/strike"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Strike: "
+                        android:textColor="#00101C"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/strikeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#B300101C" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Dip: "
+                        android:textColor="#00101C"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dipText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#B300101C" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rake"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Rake: "
+                        android:textColor="#00101C"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/rakeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#B300101C" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/strike1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Strike: "
+                        android:textColor="#00101C"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/strikeText1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#B300101C" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dip1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Dip: "
+                        android:textColor="#00101C"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dipText1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#B300101C" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rake1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Rake: "
+                        android:textColor="#00101C"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/rakeText1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#B300101C" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DC(%): "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dcText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/clvd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CLVD(%): "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/clvdText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/vr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VR: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/vrText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/computed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Çözümü Yapan: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/computedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+            <TextView
+                android:id="@+id/method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yöntem: "
+                android:textColor="#00101C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/methodText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B300101C" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/popupShareBtnEQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00F1F1F1"
+                    android:elevation="100dp"
+                    android:src="@drawable/share" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
+
+
+

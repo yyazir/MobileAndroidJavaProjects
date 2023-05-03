@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95273676524",
+    "project_id": "guide-82ab3",
+    "storage_bucket": "guide-82ab3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95273676524:android:968c7f0143c22d9a287fc9",
+        "android_client_info": {
+          "package_name": "com.yumel.rehber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95273676524-tf2c0q0la17lavhtku48ecehl6db88uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAOZWjYAvMw7qZQAMuRjJbP1XX2C4deBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95273676524-tf2c0q0la17lavhtku48ecehl6db88uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
