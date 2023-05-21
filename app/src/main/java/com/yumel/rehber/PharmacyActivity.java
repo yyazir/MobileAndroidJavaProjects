@@ -35,7 +35,7 @@ public class PharmacyActivity extends AppCompatActivity {
     public String selectedNeighborhood = " ";
     Bundle bundle;
     Intent intent;
-    PharmacyBottomSheetDialogFilter pharmacyBottomSheetDialogFilter;
+    FilterBottomSheetDialogFilter pharmacyBottomSheetDialogFilter;
     private int ilKodu;
     private String ilceKodu;
     private int nobetGunu;
@@ -75,7 +75,7 @@ public class PharmacyActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                pharmacyBottomSheetDialogFilter = new PharmacyBottomSheetDialogFilter();
+                pharmacyBottomSheetDialogFilter = new FilterBottomSheetDialogFilter();
                 pharmacyBottomSheetDialogFilter.show(getSupportFragmentManager(), "dialog");
 
             }

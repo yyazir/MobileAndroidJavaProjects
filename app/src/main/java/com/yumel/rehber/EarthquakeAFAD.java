@@ -105,7 +105,7 @@ public class EarthquakeAFAD {
     @SerializedName("amplitudes")
     private String amplitudes;
 
-    public EarthquakeAFAD(int id, Date eventDate, double longitude, double latitude, double magnitude, String magnitudeType, String location, double depth, double rms, double erh, double erz, int gap, int eaeventId, int crustModelId, int eventTypeId, String eventType, String magnitudeDescription, String formattedDate, String depthDescription, int refId, String province, String district, String typeName, String typeNameEng, String magnitudeName, String magnitudeNameEng, String timeName, String timeNameEng, String momentTensor, String distanceInformation, String bulletins, String moments, String amplitudes) {
+    public EarthquakeAFAD() {
         this.id = id;
         this.eventDate = eventDate;
         this.longitude = longitude;

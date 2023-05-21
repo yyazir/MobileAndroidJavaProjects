@@ -29,7 +29,6 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.util.MapTileIndex;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.Overlay;
 import org.osmdroid.views.overlay.OverlayManager;
 
 import java.io.Serializable;
@@ -103,7 +102,7 @@ public class OsmPharmacyMap extends AppCompatActivity {
         mapView.getOverlays().add(marker);
         postPharmaListMap = getPharmacies();
         for (int i = 0; i < postPharmaListMap.size(); i++) {
-            eNabizPharmacy = postPharmaListMap.get(i);
+            final ENabizPharmacy eNabizPharmacy = postPharmaListMap.get(i);
             eNabizPharmacy.setLatitude(eNabizPharmacy.getLatitude());
             eNabizPharmacy.setLongitude(eNabizPharmacy.getLongitude());
             pharmacyMarker = new Marker(mapView);
@@ -120,14 +119,20 @@ public class OsmPharmacyMap extends AppCompatActivity {
             pharmacyMarker.setIcon(pharmacyDrawable);
             mapView.getOverlays().add(pharmacyMarker);
             pharmacyMarker.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
-                                                        @Override
-                                                        public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                                            closeAllPopups(pharmacyMarker);
-                                                            marker.showInfoWindow();
-                                                            return true;
-                                                        }
-                                                    }
-            );
+                @Override
+                public boolean onMarkerClick(Marker marker, MapView mapView) {
+                    BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(1);
+                    Bundle args = new Bundle();
+                    args.putString("name", eNabizPharmacy.getPharmacyName());
+                    args.putString("district", eNabizPharmacy.getDistrictName());
+                    args.putString("address", eNabizPharmacy.getAddress());
+                    args.putDouble("lat", Double.parseDouble(eNabizPharmacy.getLatitude()));
+                    args.putDouble("lon", Double.parseDouble(eNabizPharmacy.getLongitude()));
+                    bottomSheetDialog.setArguments(args);
+                    bottomSheetDialog.show(getSupportFragmentManager(),bottomSheetDialog.getTag());
+                    return true;
+                }
+            });
         }
         mapView.setMultiTouchControls(true);
         mapView.isAnimating();
@@ -191,15 +196,6 @@ public class OsmPharmacyMap extends AppCompatActivity {
         mapView.zoomToBoundingBox(boundingBox, true, 50);
     }
 
-
-    private void closeAllPopups(Marker selectedMarker) {
-        for (Overlay overlay : mapView.getOverlays()) {
-            Marker marker = (Marker) overlay;
-            if (!marker.equals(selectedMarker)) {
-                marker.closeInfoWindow();
-            }
-        }
-    }
 
     @NonNull
     @Contract(" -> new")

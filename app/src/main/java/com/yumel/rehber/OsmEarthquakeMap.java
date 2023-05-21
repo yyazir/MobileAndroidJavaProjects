@@ -67,7 +67,7 @@ public class OsmEarthquakeMap extends AppCompatActivity {
         mapView = (MapView) findViewById(R.id.mapEarthquakeMap);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
         mapView.setMultiTouchControls(true);
-        overlayManager =mapView.getOverlayManager();
+        overlayManager = mapView.getOverlayManager();
         Drawable drawable = getResources().getDrawable(R.drawable.location);
         Marker marker = new Marker(mapView);
         Criteria criteria = new Criteria();
@@ -96,7 +96,7 @@ public class OsmEarthquakeMap extends AppCompatActivity {
         mapController.setZoom(7);
         mapController.setCenter(currentLocation);
         marker.setPosition(currentLocation);
-        marker.setAnchor(Marker.ANCHOR_CENTER,Marker.ANCHOR_BOTTOM);
+        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         marker.setIcon(drawable);
         marker.setTitle("Konumunuz");
         mapView.getOverlays().add(marker);
@@ -123,10 +123,11 @@ public class OsmEarthquakeMap extends AppCompatActivity {
             for (int i = 0; i < earthquakeArrayList.size(); i++) {
                 double magnitude = (double) earthquakeArrayList.get(i).getMagnitude();
 
-                if (magnitude <= 3.0){
+                if (magnitude <= 3.0) {
                     Marker earthquakeMarker1 = new Marker(mapView);
+                    final EarthquakeAFAD earthquakeAFAD = earthquakeArrayList.get(i);
                     earthquakeMarker1.setPosition(earthquakeArrayList.get(i).getGeoPoint());
-                    earthquakeMarker1.setAnchor(Marker.ANCHOR_CENTER,Marker.ANCHOR_BOTTOM);
+                    earthquakeMarker1.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     customInfoWindowEQ = new CustomInfoWindowEarthquake(R.layout.custom_info_window_earthquake, mapView);
                     earthquakeMarker1.setInfoWindow(customInfoWindowEQ);
                     earthquakeMarker1.setRelatedObject(earthquakeArrayList.get(i));
@@ -135,16 +136,25 @@ public class OsmEarthquakeMap extends AppCompatActivity {
                     earthquakeMarker1.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
                                                                    @Override
                                                                    public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                                                       closeAllPopups(earthquakeMarker1);
-                                                                       marker.showInfoWindow();
+                                                                       BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(2);
+                                                                       Bundle args = new Bundle();
+                                                                       args.putString("location", earthquakeAFAD.getLocation());
+                                                                       args.putDouble("magnitude", earthquakeAFAD.getMagnitude());
+                                                                       args.putString("date", earthquakeAFAD.getEventDate().toString());
+                                                                       args.putDouble("depth", earthquakeAFAD.getDepth());
+                                                                       args.putDouble("lat", earthquakeAFAD.getLatitude());
+                                                                       args.putDouble("lon", earthquakeAFAD.getLongitude());
+                                                                       bottomSheetDialog.setArguments(args);
+                                                                       bottomSheetDialog.show(getSupportFragmentManager(), bottomSheetDialog.getTag());
                                                                        return true;
                                                                    }
                                                                }
                     );
                 } else if (magnitude >= 3.1 && magnitude <= 3.9) {
                     Marker earthquakeMarker2 = new Marker(mapView);
+                    final EarthquakeAFAD earthquakeAFAD = earthquakeArrayList.get(i);
                     earthquakeMarker2.setPosition(earthquakeArrayList.get(i).getGeoPoint());
-                    earthquakeMarker2.setAnchor(Marker.ANCHOR_CENTER,Marker.ANCHOR_BOTTOM);
+                    earthquakeMarker2.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     customInfoWindowEQ = new CustomInfoWindowEarthquake(R.layout.custom_info_window_earthquake, mapView);
                     earthquakeMarker2.setInfoWindow(customInfoWindowEQ);
                     earthquakeMarker2.setRelatedObject(earthquakeArrayList.get(i));
@@ -153,16 +163,25 @@ public class OsmEarthquakeMap extends AppCompatActivity {
                     earthquakeMarker2.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
                                                                    @Override
                                                                    public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                                                       closeAllPopups(earthquakeMarker2);
-                                                                       marker.showInfoWindow();
+                                                                       BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(2);
+                                                                       Bundle args = new Bundle();
+                                                                       args.putString("location", earthquakeAFAD.getLocation());
+                                                                       args.putDouble("magnitude", earthquakeAFAD.getMagnitude());
+                                                                       args.putString("date", earthquakeAFAD.getEventDate().toString());
+                                                                       args.putDouble("depth", earthquakeAFAD.getDepth());
+                                                                       args.putDouble("lat", earthquakeAFAD.getLatitude());
+                                                                       args.putDouble("lon", earthquakeAFAD.getLongitude());
+                                                                       bottomSheetDialog.setArguments(args);
+                                                                       bottomSheetDialog.show(getSupportFragmentManager(), bottomSheetDialog.getTag());
                                                                        return true;
                                                                    }
                                                                }
                     );
-                } else if (magnitude >= 4.1 && magnitude <= 4.9 ) {
+                } else if (magnitude >= 4.1 && magnitude <= 4.9) {
                     Marker earthquakeMarker3 = new Marker(mapView);
+                    final EarthquakeAFAD earthquakeAFAD = earthquakeArrayList.get(i);
                     earthquakeMarker3.setPosition(earthquakeArrayList.get(i).getGeoPoint());
-                    earthquakeMarker3.setAnchor(Marker.ANCHOR_CENTER,Marker.ANCHOR_BOTTOM);
+                    earthquakeMarker3.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     customInfoWindowEQ = new CustomInfoWindowEarthquake(R.layout.custom_info_window_earthquake, mapView);
                     earthquakeMarker3.setInfoWindow(customInfoWindowEQ);
                     earthquakeMarker3.setRelatedObject(earthquakeArrayList.get(i));
@@ -171,16 +190,25 @@ public class OsmEarthquakeMap extends AppCompatActivity {
                     earthquakeMarker3.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
                                                                    @Override
                                                                    public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                                                       closeAllPopups(earthquakeMarker3);
-                                                                       marker.showInfoWindow();
+                                                                       BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(2);
+                                                                       Bundle args = new Bundle();
+                                                                       args.putString("location", earthquakeAFAD.getLocation());
+                                                                       args.putDouble("magnitude", earthquakeAFAD.getMagnitude());
+                                                                       args.putString("date", earthquakeAFAD.getEventDate().toString());
+                                                                       args.putDouble("depth", earthquakeAFAD.getDepth());
+                                                                       args.putDouble("lat", earthquakeAFAD.getLatitude());
+                                                                       args.putDouble("lon", earthquakeAFAD.getLongitude());
+                                                                       bottomSheetDialog.setArguments(args);
+                                                                       bottomSheetDialog.show(getSupportFragmentManager(), bottomSheetDialog.getTag());
                                                                        return true;
                                                                    }
                                                                }
                     );
-                } else if (magnitude >= 5.1 && magnitude <= 5.9 ) {
+                } else if (magnitude >= 5.1 && magnitude <= 5.9) {
                     Marker earthquakeMarker4 = new Marker(mapView);
+                    final EarthquakeAFAD earthquakeAFAD = earthquakeArrayList.get(i);
                     earthquakeMarker4.setPosition(earthquakeArrayList.get(i).getGeoPoint());
-                    earthquakeMarker4.setAnchor(Marker.ANCHOR_CENTER,Marker.ANCHOR_BOTTOM);
+                    earthquakeMarker4.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     customInfoWindowEQ = new CustomInfoWindowEarthquake(R.layout.custom_info_window_earthquake, mapView);
                     earthquakeMarker4.setInfoWindow(customInfoWindowEQ);
                     earthquakeMarker4.setRelatedObject(earthquakeArrayList.get(i));
@@ -189,16 +217,25 @@ public class OsmEarthquakeMap extends AppCompatActivity {
                     earthquakeMarker4.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
                                                                    @Override
                                                                    public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                                                       closeAllPopups(earthquakeMarker4);
-                                                                       marker.showInfoWindow();
+                                                                       BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(2);
+                                                                       Bundle args = new Bundle();
+                                                                       args.putString("location", earthquakeAFAD.getLocation());
+                                                                       args.putDouble("magnitude", earthquakeAFAD.getMagnitude());
+                                                                       args.putString("date", earthquakeAFAD.getEventDate().toString());
+                                                                       args.putDouble("depth", earthquakeAFAD.getDepth());
+                                                                       args.putDouble("lat", earthquakeAFAD.getLatitude());
+                                                                       args.putDouble("lon", earthquakeAFAD.getLongitude());
+                                                                       bottomSheetDialog.setArguments(args);
+                                                                       bottomSheetDialog.show(getSupportFragmentManager(), bottomSheetDialog.getTag());
                                                                        return true;
                                                                    }
                                                                }
                     );
-                }  else if (magnitude >= 6.1 && magnitude <= 6.9 ) {
+                } else if (magnitude >= 6.1 && magnitude <= 6.9) {
                     Marker earthquakeMarker5 = new Marker(mapView);
+                    final EarthquakeAFAD earthquakeAFAD = earthquakeArrayList.get(i);
                     earthquakeMarker5.setPosition(earthquakeArrayList.get(i).getGeoPoint());
-                    earthquakeMarker5.setAnchor(Marker.ANCHOR_CENTER,Marker.ANCHOR_BOTTOM);
+                    earthquakeMarker5.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     customInfoWindowEQ = new CustomInfoWindowEarthquake(R.layout.custom_info_window_earthquake, mapView);
                     earthquakeMarker5.setInfoWindow(customInfoWindowEQ);
                     earthquakeMarker5.setRelatedObject(earthquakeArrayList.get(i));
@@ -207,29 +244,46 @@ public class OsmEarthquakeMap extends AppCompatActivity {
                     earthquakeMarker5.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
                                                                    @Override
                                                                    public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                                                       closeAllPopups(earthquakeMarker5);
-                                                                       marker.showInfoWindow();
+                                                                       BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(2);
+                                                                       Bundle args = new Bundle();
+                                                                       args.putString("location", earthquakeAFAD.getLocation());
+                                                                       args.putDouble("magnitude", earthquakeAFAD.getMagnitude());
+                                                                       args.putString("date", earthquakeAFAD.getEventDate().toString());
+                                                                       args.putDouble("depth", earthquakeAFAD.getDepth());
+                                                                       args.putDouble("lat", earthquakeAFAD.getLatitude());
+                                                                       args.putDouble("lon", earthquakeAFAD.getLongitude());
+                                                                       bottomSheetDialog.setArguments(args);
+                                                                       bottomSheetDialog.show(getSupportFragmentManager(), bottomSheetDialog.getTag());
                                                                        return true;
                                                                    }
                                                                }
                     );
-                }   else  {
+                } else {
                     Marker earthquakeMarker6 = new Marker(mapView);
+                    final EarthquakeAFAD earthquakeAFAD = earthquakeArrayList.get(i);
                     earthquakeMarker6.setPosition(earthquakeArrayList.get(i).getGeoPoint());
-                    earthquakeMarker6.setAnchor(Marker.ANCHOR_CENTER,Marker.ANCHOR_BOTTOM);
+                    earthquakeMarker6.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     customInfoWindowEQ = new CustomInfoWindowEarthquake(R.layout.custom_info_window_earthquake, mapView);
                     earthquakeMarker6.setInfoWindow(customInfoWindowEQ);
                     earthquakeMarker6.setRelatedObject(earthquakeArrayList.get(i));
                     earthquakeMarker6.setIcon(earthquakeDrawable6);
                     mapView.getOverlays().add(earthquakeMarker6);
                     earthquakeMarker6.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
-                                                                @Override
-                                                                public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                                                    closeAllPopups(earthquakeMarker6);
-                                                                    marker.showInfoWindow();
-                                                                    return true;
-                                                                }
-                                                            }
+                                                                   @Override
+                                                                   public boolean onMarkerClick(Marker marker, MapView mapView) {
+                                                                       BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(2);
+                                                                       Bundle args = new Bundle();
+                                                                       args.putString("location", earthquakeAFAD.getLocation());
+                                                                       args.putDouble("magnitude", earthquakeAFAD.getMagnitude());
+                                                                       args.putString("date", earthquakeAFAD.getEventDate().toString());
+                                                                       args.putDouble("depth", earthquakeAFAD.getDepth());
+                                                                       args.putDouble("lat", earthquakeAFAD.getLatitude());
+                                                                       args.putDouble("lon", earthquakeAFAD.getLongitude());
+                                                                       bottomSheetDialog.setArguments(args);
+                                                                       bottomSheetDialog.show(getSupportFragmentManager(), bottomSheetDialog.getTag());
+                                                                       return true;
+                                                                   }
+                                                               }
                     );
                 }
             }
@@ -272,8 +326,6 @@ public class OsmEarthquakeMap extends AppCompatActivity {
         });
 
     }
-
-
 
 
 }
