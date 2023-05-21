@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:background="@drawable/bottom_dialog_shape"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingLeft="5dp"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/imageEarthquake"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            app:layout_constraintTop_toTopOf="@id/linearLayout"
+            app:layout_constraintStart_toStartOf="@id/linearLayout"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"/>
+
+        <TextView
+            android:id="@+id/location1"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Lokasyon: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/imageEarthquake"
+            app:layout_constraintStart_toStartOf="@id/linearLayout"/>
+
+        <TextView
+            android:id="@+id/locationText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/location1"
+            app:layout_constraintStart_toStartOf="@id/location1"/>
+
+        <TextView
+            android:id="@+id/magnitude1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Büyüklük: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/imageEarthquake"
+            app:layout_constraintEnd_toEndOf="@id/linearLayout"
+            app:layout_constraintStart_toEndOf="@+id/location1"
+            />
+
+        <TextView
+            android:id="@+id/magnitudeText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/magnitude1"
+            app:layout_constraintStart_toStartOf="@id/magnitude1"
+            app:layout_constraintStart_toEndOf="@+id/magnitude1"
+            />
+
+
+        <TextView
+            android:id="@+id/deep1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Derinlik: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/locationText1"
+            app:layout_constraintStart_toStartOf="@id/locationText1"/>
+
+        <TextView
+            android:id="@+id/deepText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/deep1"
+            app:layout_constraintStart_toStartOf="@id/deep1"/>
+
+        <TextView
+            android:id="@+id/mo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mo: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/magnitudeText1"
+            app:layout_constraintStart_toStartOf="@id/magnitudeText1"/>
+
+        <TextView
+            android:id="@+id/moText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/mo"
+            app:layout_constraintStart_toStartOf="@id/mo"/>
+
+        <TextView
+            android:id="@+id/date1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tarih: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/deepText1"
+            app:layout_constraintStart_toStartOf="@id/deepText1"/>
+
+        <TextView
+            android:id="@+id/dateText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/date1"
+            app:layout_constraintStart_toStartOf="@id/date1"/>
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/vrText"
+            app:layout_constraintStart_toStartOf="@id/vrText">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/strike"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Strike: "
+                    android:textColor="#00101C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/strikeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#B300101C" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Dip: "
+                    android:textColor="#00101C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dipText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#B300101C" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Rake: "
+                    android:textColor="#00101C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rakeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#B300101C" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/dateText1"
+            app:layout_constraintStart_toStartOf="@id/dateText1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/strike1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Strike: "
+                    android:textColor="#00101C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/strikeText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#B300101C" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dip1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Dip: "
+                    android:textColor="#00101C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dipText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#B300101C" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rake1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Rake: "
+                    android:textColor="#00101C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rakeText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#B300101C" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="DC(%): "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/linear1"
+            app:layout_constraintStart_toStartOf="@id/linear1"/>
+
+        <TextView
+            android:id="@+id/dcText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/dc"
+            app:layout_constraintStart_toStartOf="@id/dc"/>
+
+        <TextView
+            android:id="@+id/clvd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="CLVD(%): "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/linear2"
+            app:layout_constraintStart_toStartOf="@id/linear2"/>
+
+        <TextView
+            android:id="@+id/clvdText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/clvd"
+            app:layout_constraintStart_toStartOf="@id/clvd"/>
+
+        <TextView
+            android:id="@+id/vr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="VR: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/moText"
+            app:layout_constraintStart_toStartOf="@id/moText"/>
+
+        <TextView
+            android:id="@+id/vrText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/vr"
+            app:layout_constraintStart_toStartOf="@id/vr"/>
+
+        <TextView
+            android:id="@+id/computed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Çözümü Yapan: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/clvdText"
+            app:layout_constraintStart_toStartOf="@id/clvdText"/>
+
+        <TextView
+            android:id="@+id/computedText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/computed"
+            app:layout_constraintStart_toStartOf="@id/computed"/>
+
+        <TextView
+            android:id="@+id/method"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Yöntem: "
+            android:textColor="#00101C"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/dcText"
+            app:layout_constraintStart_toStartOf="@id/dcText"/>
+
+        <TextView
+            android:id="@+id/methodText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#B300101C"
+            android:paddingLeft="15dp"
+            app:layout_constraintTop_toBottomOf="@id/method"
+            app:layout_constraintStart_toStartOf="@id/method"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/shareFM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="PAYLAŞ"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/share_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/methodText"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

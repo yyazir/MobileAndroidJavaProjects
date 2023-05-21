@@ -40,7 +40,6 @@ public class OsmFocalMechanism extends AppCompatActivity {
     MapView mapView;
     OverlayManager overlayManager;
     Criteria criteria;
-    List<Earthquake> focalMechanism;
     FocalMechanismInterface focalMechanismInterface;
     private static final String TAG = "OsmFocalMechanism";
     List<Earthquake> focalMechanismsList;
@@ -130,8 +129,27 @@ public class OsmFocalMechanism extends AppCompatActivity {
                         marker.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
                             @Override
                             public boolean onMarkerClick(Marker marker, MapView mapView) {
-                                closeAllPopups(marker);
-                                marker.showInfoWindow();
+                                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(3);
+                                Bundle args = new Bundle();
+                                args.putString("url", earthquake.getBeachball());
+                                args.putString("location", earthquake.getLat()+" "+ earthquake.getLon());
+                                args.putString("magnitude", earthquake.getMw());
+                                args.putString("depth", earthquake.getCentDepth());
+                                args.putString("mo", earthquake.getMo());
+                                args.putString("date", earthquake.getDate());
+                                args.putString("vr", earthquake.getVr());
+                                args.putString("strike", earthquake.getStrike1());
+                                args.putString("dip", earthquake.getDip1());
+                                args.putString("rake", earthquake.getRake1());
+                                args.putString("strike1", earthquake.getStrike2());
+                                args.putString("dip1", earthquake.getDip2());
+                                args.putString("rake1", earthquake.getRake2());
+                                args.putString("clvd", earthquake.getClvd());
+                                args.putString("dc", earthquake.getDc());
+                                args.putString("computed", earthquake.getComputed());
+                                args.putString("method", earthquake.getMethod());
+                                bottomSheetDialog.setArguments(args);
+                                bottomSheetDialog.show(getSupportFragmentManager(),bottomSheetDialog.getTag());
                                 return true;
                             }
                         });
